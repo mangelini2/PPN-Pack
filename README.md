@@ -5,6 +5,8 @@
 <h4 align = "center"> <sup>3</sup>Hong Kong Centre for Logistics Robotics</center></h4>
 
 ### Introduction
+<video src="./figures/ppn_00.mp4" type="video/mp4" width="320" height="240" controls=“”>
+</video>
 <div class="center">
 <table>
     <caption><b>Comparison of PPN-Pack and its SDF-Pack</b></caption>

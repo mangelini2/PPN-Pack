@@ -5,6 +5,21 @@
 <h4 align = "center"> <sup>3</sup>Hong Kong Centre for Logistics Robotics</center></h4>
 
 ### Introduction
+<div class="center">
+<table>
+    <caption><b>Comparison of PPN-Pack and its SDF-Pack</b></caption>
+	<tr>
+	    <th>```HTML
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+</video>
+```</th>
+	    <th>引脚工作状态</th>
+	    <th>所指示的网络状态</th>  
+	</tr>
+</table>
+</div>
+
 This repository is for our paper *'PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce PPNPack, a novel learning-based approach to improve the efficiency of packing general objects. Our key idea is to learn to predict good placement locations for compact object packing to prune the search space and reduce packing computation. Specifically, we formulate the learning of placement proposals as a ranking task and construct a ranking loss based on the Hinge loss to rank the potentially compact placements. To enhance the placement learning, we further design a multi-resolution cross-correlation module to learn the placement compactness between the container and objects.
 
 <div style="text-align: center;">

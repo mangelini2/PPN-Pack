@@ -31,9 +31,16 @@ Our method works together with a packing heuristic (SDF-Minimization in our impl
 | ------------- | ------------- | -------------| ------------- | ------------- |
 | <video autoplay src="https://github.com/user-attachments/assets/1637ebd4-4f5f-4607-a012-ed1685de162d" > | <video autoplay src="https://github.com/user-attachments/assets/2a22486b-ae6a-4c9a-82c9-90081355fa3f">| | <video autoplay src="https://github.com/user-attachments/assets/04b405bd-f909-4cca-af12-a89877be29b8"> | <video autoplay src="https://github.com/user-attachments/assets/ca088e2e-b42d-4fcd-8c7b-76e180d16eeb">|
 
+### Installation
+
+* Environment
+  ```
+  conda env create -f environment.yml
+  conda activate sdf_pack
+  ```
 
 ### Download the Object Models
-Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 1000 packing sequences of 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on novel sequences formed by randomly drawn objects.
+Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 1000 packing sequences of 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive1](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on novel sequences formed by randomly drawn objects.
 
 ```
 |-- 1000_packing_sequences_of_80_objects.npy
@@ -51,15 +58,18 @@ Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experimen
 ```
 The subfolder `./dataset/our_oriented_dataset/` contains the simplified object meshes processed to be watertight. These meshes are further processed through V-HACD convex decomposition for collision simulation, and the processed collision models are presented in the folder `./dataset/our_oriented_decomp/`. We also provide the voxelization results of the objects in `./dataset/our_oriented_occs/`. 
 
-### Download the Training Dataset
-To construct the training ground truth, we run the SDF-Minimization Heuristic on 1000 packing sequences (object IDs in `1000_packing_sequences_of_80_objects.npy`) to form the ground truth of our placement proposal network training.
 
-The ground truth for each packing sequence has a format below
+
+
+### Download the Training Dataset
+To construct the training ground truth, we run the SDF-Minimization Heuristic on 1000 packing sequences (object IDs in `1000_packing_sequences_of_80_objects.npy`) to form the ground truth of our placement proposal network training. The training dataset can be downloaded from [Google Drive2](https://drive.google.com/file/d/1QU7-RJbG0uTyDw4cyklMRc-tdXqCUTkL/view?usp=sharing).
+
+The ground truth for each packing sequence is formated as a dictionary with the following architecture:
 
 ```
-|-- 1000_packing_sequences_of_80_objects.npy
-|-- dataset  
-|   |-- our_oriented_dataset
+|-- case_id00999.npy
+|-- '0'  
+|   |-- ''
 |   |   |-- 00000003_072-c_toy_airplane-processed.ply
 |   |   |...
 |   |-- our_oriented_decomp
@@ -71,13 +81,7 @@ The ground truth for each packing sequence has a format below
 |   |   |...
 ```
 
-### Installation
 
-* Environment
-  ```
-  conda env create -f environment.yml
-  conda activate sdf_pack
-  ```
 
 ### Todo List
 

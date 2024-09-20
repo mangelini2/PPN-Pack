@@ -70,15 +70,12 @@ The ground truth for each packing sequence is formatted as a dictionary with the
 |-- case_id00999.npy
 |-- '0' (indicating the ID of the packing step)
 |   |-- 'scene_top_down' (indicating the current container's heightmap with a shape of (32,32))
-|   |   |-- 
+|   |-- 'list_obj_info' (list of 5*4=20 dictionaries, each element represents one of the 5 buffered objects and one of the 4 orientations of each object)
+|   |   |-- 0 (0-20, ID of the 20 dictionaries)
+|   |   |   |-- 'shape_type' (an INT, indicating the ID of the shape)
+|   |   |   |-- 'objective_map' (the objective map with shape (32,32), each element represents the GT SDF-Mimization Heuristic Value, lower is better)
 |   |   |...
-|   |-- 'list_obj_info' (list of dictionaries, each element represents a buffered object)
-|   |   |-- 00000003_072-c_toy_airplane-processed.obj
-|   |   |...
-|   |-- our_oriented_occs
-|   |   |-- 00002777_cheezit_big_original-processed_objocc.npy
-|   |   |-- 00002777_cheezit_big_original-processed_depth.npy
-|   |   |...
+|   |...
 ```
 
 

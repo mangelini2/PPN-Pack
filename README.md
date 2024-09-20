@@ -19,6 +19,11 @@ This repository is for our paper *'PPN-Pack: Placement Proposal Network for Effi
     <br>
 </div>
 
+Packing Results of PPN-Pack on 25 Objects
+| <video autoplay src="https://github.com/user-attachments/assets/021f1bd8-6d24-41a5-b431-09814f23bca9"> | <video autoplay src="https://github.com/user-attachments/assets/f856a76e-ee94-42e8-8da3-d25195bdea94">  | <video autoplay src="https://github.com/user-attachments/assets/1ba45d79-626f-4699-b415-9ca7330d04c3"> | <video autoplay src="https://github.com/user-attachments/assets/b77f063e-0f66-44e3-b924-045b72be0d7a">  | <video autoplay src="https://github.com/user-attachments/assets/0ebd8ae3-d57b-4125-a306-e8c09226d33d">  |
+| ------------- | ------------- | -------------| ------------- | ------------- |
+| <video autoplay src="https://github.com/user-attachments/assets/0c47d438-7a13-4604-ae74-c07516dc1d10"> | <video autoplay src="https://github.com/user-attachments/assets/ab597528-7db2-4464-b8df-e758c8430fa6"> | <video autoplay src="https://github.com/user-attachments/assets/1b2f5b54-a759-4175-8159-db65e5a26022"> | <video autoplay src="https://github.com/user-attachments/assets/7d9e3b7c-8d0b-4e6e-b0c1-65fa07cb4bed"> | <video autoplay src="https://github.com/user-attachments/assets/ac31e11a-86de-48a3-8ca8-4a5b0e2f02a9"> |
+
 Our method works together with a packing heuristic (SDF-Pack in our implementation), and can more quickly locate the compact packing placements while achieving compact packing results similar to the upper-bound.
 
 | SDF-Pack (Avg 1.86 s/object) | PPN-Pack (Avg 0.43 s/object) | | SDF-Pack (Avg 1.86 s/object) | PPN-Pack (Avg 0.43 s/object) |

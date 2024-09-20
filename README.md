@@ -11,7 +11,7 @@
     <caption><b>Comparison of PPN-Pack and its SDF-Pack</b></caption>
 	<tr>
 	    <th>
-		<video src="./figures/ppn_00.mp4" type="video/mp4" width="320" height="240" controls=“”>
+		<video src=./figures/ppn_00.mp4>
 		</video>
 	    </th>
 	    <th>引脚工作状态</th>

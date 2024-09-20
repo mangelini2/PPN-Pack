@@ -40,7 +40,7 @@ Our method works together with a packing heuristic (SDF-Minimization in our impl
   ```
 
 ### Download the Object Models
-Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive1](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on 2000 novel sequences formed by randomly drawn objects.
+Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive1](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. 
 
 ```
 |-- 1000_packing_sequences_of_80_objects.npy
@@ -57,6 +57,8 @@ Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experimen
 |   |...
 ```
 The subfolder `./dataset/our_oriented_dataset/` contains the simplified object meshes processed to be watertight. These meshes are further processed through V-HACD convex decomposition for collision simulation, and the processed collision models are presented in the folder `./dataset/our_oriented_decomp/`. We also provide the voxelization results of the objects in `./dataset/our_oriented_occs/`. 
+
+We use the [1000 packing sequences](https://drive.google.com/file/d/1mDi5VlBGjY4xueQwk109HrFkjK-zA-cu/view?usp=sharing) used in SDF-Pack to generate the training data for our placement proposal network. The evaluation is performed on [2000 novel sequences](https://drive.google.com/file/d/1eJcvlzcxR4XszZpuVtf7ujD0wZDX3pmD/view?usp=sharing).
 
 
 

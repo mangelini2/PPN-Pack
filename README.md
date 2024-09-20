@@ -1,6 +1,7 @@
 ## PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing
 
-This repository is for our paper *'PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce _PPN-Pack_, a novel learning-based approach to improve the efficiency of packing general objects. Our method works together with a packing heuristic, and can more quickly locate the compact packing placements while achieving similar packing compactness as the upper-bound ([_SDF-Minimization_](https://github.com/kwpoon/SDF-Pack)).
+This repository is for our paper *'[PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing](https://ieeexplore.ieee.org/document/10493124)'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce _PPN-Pack_, a novel learning-based approach to improve the efficiency of packing general objects. Our method works together with a packing heuristic, and can more quickly locate the compact packing placements while achieving similar packing compactness as the upper-bound ([_SDF-Minimization_](https://github.com/kwpoon/SDF-Pack)).
+
 
 <h4 align = "center"> Visual Comparison of SDF-Minimization and PPN-Pack in Packing 25 Objects</center></h4>
 
@@ -45,8 +46,6 @@ Please download the [trained model](https://drive.google.com/file/d/1QU7-RJbG0uT
 
 * **Packing Evaluation in the Simulator**
 
-The physical simulation is built based on the work [Ravens - Transporter Networks](https://github.com/google-research/ravens). Thanks for their great work!
-
 The code will perform sequential packing, loading the objects in each testing sequence one by one. Physical simulation is performed after each packing step until the object is stabilised.
 
 Running without visualization would make it faster to go through all packing cases. For this setting, please use the command:
@@ -64,4 +63,25 @@ In addition, if you want to disable our PPN-Net and test the computation speed o
 python demos_network.py --disp=True --accelerate=plain
 ```
 
+
+### Citation
+
+```
+@article{pan2024ppn,
+  title={PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing},
+  author={Pan, Jia-Hui and Gao, Xiaojie and Hui, Ka-Hei and Zhu, Shize and Liu, Yun-Hui and Heng, Pheng-Ann and Fu, Chi-Wing},
+  journal={IEEE Robotics and Automation Letters},
+  year={2024},
+  publisher={IEEE}
+}
+```
+
+### Acknowledgments
+
+In this project, we use (parts of) the official implementations of the following works:
+
+* [Ravens-Transporter Networks](https://github.com/google-research/ravens) (Physical Simulation)
+* [Pytorch-UNet](https://github.com/milesial/Pytorch-UNet) (Network Architecture)
+
+We thank the respective authors for their great work!
 

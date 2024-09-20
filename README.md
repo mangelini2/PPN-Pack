@@ -64,15 +64,15 @@ The subfolder `./dataset/our_oriented_dataset/` contains the simplified object m
 ### Download the Training Dataset
 To construct the training ground truth, we run the SDF-Minimization Heuristic on 1000 packing sequences (object IDs in `1000_packing_sequences_of_80_objects.npy`) to form the ground truth of our placement proposal network training. The training dataset can be downloaded from [Google Drive2](https://drive.google.com/file/d/1QU7-RJbG0uTyDw4cyklMRc-tdXqCUTkL/view?usp=sharing).
 
-The ground truth for each packing sequence is formated as a dictionary with the following architecture:
+The ground truth for each packing sequence is formatted as a dictionary with the following architecture:
 
 ```
 |-- case_id00999.npy
-|-- '0'  
-|   |-- ''
-|   |   |-- 00000003_072-c_toy_airplane-processed.ply
+|-- '0' (indicating the ID of the packing step)
+|   |-- 'scene_top_down' (indicating the current container's heightmap with a shape of (32,32))
+|   |   |-- 
 |   |   |...
-|   |-- our_oriented_decomp
+|   |-- 'list_obj_info' (list of dictionaries, each element represents a buffered object)
 |   |   |-- 00000003_072-c_toy_airplane-processed.obj
 |   |   |...
 |   |-- our_oriented_occs

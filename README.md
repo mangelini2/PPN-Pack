@@ -44,7 +44,7 @@ The evaluation is performed on [2000 novel sequences](sequential_testing_shape_c
 
 Please download the [trained model](https://drive.google.com/file/d/1QU7-RJbG0uTyDw4cyklMRc-tdXqCUTkL/view?usp=sharing) and extract the files to form the folder './trained_checkpoints'
 
-* **Packing Evaluation in the Simulator**
+* **Sequantial Packing Evaluation**
 
 The code will perform sequential packing, loading the objects in each testing sequence one by one. Physical simulation is performed after each packing step until the object is stabilised.
 

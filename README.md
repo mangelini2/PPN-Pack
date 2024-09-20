@@ -4,8 +4,6 @@
 <h4 align = "center"> The Chinese University of Hong Kong.</center></h4>
 <h4 align = "center"> <sup>3</sup>Hong Kong Centre for Logistics Robotics</center></h4>
 
-https://drive.google.com/file/d/14buqq_wEJha_u8vb5SvtilHob1ZddY5D/view?usp=sharing
-
 
 ### Introduction
 

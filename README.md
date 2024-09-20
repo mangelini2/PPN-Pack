@@ -4,21 +4,10 @@
 <h4 align = "center"> The Chinese University of Hong Kong.</center></h4>
 <h4 align = "center"> <sup>3</sup>Hong Kong Centre for Logistics Robotics</center></h4>
 
+https://drive.google.com/file/d/14buqq_wEJha_u8vb5SvtilHob1ZddY5D/view?usp=sharing
+
+
 ### Introduction
-<video src="./figures/ppn_00.mp4" type="video/mp4" width="320" height="240" controls=“”></video>
-<div class="center">
-<table>
-    <caption><b>Comparison of PPN-Pack and its SDF-Pack</b></caption>
-	<tr>
-	    <th>
-		<video src=./figures/ppn_00.mp4>
-		</video>
-	    </th>
-	    <th>引脚工作状态</th>
-	    <th>所指示的网络状态</th>  
-	</tr>
-</table>
-</div>
 
 This repository is for our paper *'PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce PPNPack, a novel learning-based approach to improve the efficiency of packing general objects. Our key idea is to learn to predict good placement locations for compact object packing to prune the search space and reduce packing computation. Specifically, we formulate the learning of placement proposals as a ranking task and construct a ranking loss based on the Hinge loss to rank the potentially compact placements. To enhance the placement learning, we further design a multi-resolution cross-correlation module to learn the placement compactness between the container and objects.
 
@@ -29,6 +18,13 @@ This repository is for our paper *'PPN-Pack: Placement Proposal Network for Effi
     src=./figures/framework.png alt="">
     <br>
 </div>
+
+Our method works together with a packing heuristic (SDF-Pack in our implementation), and can more quickly locate the compact packing placements while achieving compact packing results similar to the upper-bound.
+| SDF-Pack (Average Computation Time: 1.86 s/object) | PPN-Pack (Average Computation Time: 0.43 s/object) |
+| ------------- | ------------- |
+| <video src="https://github.com/user-attachments/assets/1637ebd4-4f5f-4607-a012-ed1685de162d" autoplay> | <video src="https://github.com/user-attachments/assets/2a22486b-ae6a-4c9a-82c9-90081355fa3f" autoplay>|
+| <video src="https://github.com/user-attachments/assets/04b405bd-f909-4cca-af12-a89877be29b8" autoplay height=320 width=480> | <video src="https://github.com/user-attachments/assets/ca088e2e-b42d-4fcd-8c7b-76e180d16eeb" autoplay>|
+
 
 ### Download the Object Models
 Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 1000 packing sequences of 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on novel sequences formed by randomly drawn objects.

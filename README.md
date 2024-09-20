@@ -7,7 +7,7 @@
 
 ### Introduction
 
-This repository is for our paper *'PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce PPNPack, a novel learning-based approach to improve the efficiency of packing general objects. Our key idea is to learn to predict good placement locations for compact object packing to prune the search space and reduce packing computation. Specifically, we formulate the learning of placement proposals as a ranking task and construct a ranking loss based on the Hinge loss to rank the potentially compact placements. To enhance the placement learning, we further design a multi-resolution cross-correlation module to learn the placement compactness between the container and objects.
+This repository is for our paper *'PPN-Pack: Placement Proposal Network for Efficient Robotic Bin Packing'* published in IEEE Robotics and Automation Letters (RA-L), 2024. In this work, we introduce PPNPack, a novel learning-based approach to improve the efficiency of packing general objects. Our key idea is to learn to predict good placement locations for compact object packing to prune the search space and reduce packing computation. Specifically, we formulate the learning of placement proposals as a ranking task and construct a ranking loss based on the Hinge loss to rank the potentially compact placements. To enhance the placement learning, we further design a multi-resolution cross-correlation module to learn the placement compactness between the container and objects. The framework of our method is shown below, and we also show some packing results of our method.
 
 <div style="text-align: center;">
     <img style="border-radius: 0.3125em;
@@ -17,14 +17,17 @@ This repository is for our paper *'PPN-Pack: Placement Proposal Network for Effi
     <br>
 </div>
 
-Packing Results of PPN-Pack on 25 Objects
-| <video autoplay src="https://github.com/user-attachments/assets/021f1bd8-6d24-41a5-b431-09814f23bca9"> | <video autoplay src="https://github.com/user-attachments/assets/f856a76e-ee94-42e8-8da3-d25195bdea94">  | <video autoplay src="https://github.com/user-attachments/assets/1ba45d79-626f-4699-b415-9ca7330d04c3"> | <video autoplay src="https://github.com/user-attachments/assets/b77f063e-0f66-44e3-b924-045b72be0d7a">  | <video autoplay src="https://github.com/user-attachments/assets/0ebd8ae3-d57b-4125-a306-e8c09226d33d">  |
-| ------------- | ------------- | -------------| ------------- | ------------- |
-| <video autoplay src="https://github.com/user-attachments/assets/0c47d438-7a13-4604-ae74-c07516dc1d10"> | <video autoplay src="https://github.com/user-attachments/assets/ab597528-7db2-4464-b8df-e758c8430fa6"> | <video autoplay src="https://github.com/user-attachments/assets/1b2f5b54-a759-4175-8159-db65e5a26022"> | <video autoplay src="https://github.com/user-attachments/assets/7d9e3b7c-8d0b-4e6e-b0c1-65fa07cb4bed"> | <video autoplay src="https://github.com/user-attachments/assets/ac31e11a-86de-48a3-8ca8-4a5b0e2f02a9"> |
+<!---<h4 align = "center">Packing Results of PPN-Pack Packing 25 Objects</center></h4>
 
-Our method works together with a packing heuristic (SDF-Pack in our implementation), and can more quickly locate the compact packing placements while achieving compact packing results similar to the upper-bound.
+| <video autoplay src="https://github.com/user-attachments/assets/021f1bd8-6d24-41a5-b431-09814f23bca9"> | <video autoplay src="https://github.com/user-attachments/assets/f856a76e-ee94-42e8-8da3-d25195bdea94">  | <video autoplay src="https://github.com/user-attachments/assets/1ba45d79-626f-4699-b415-9ca7330d04c3"> | <video autoplay src="https://github.com/user-attachments/assets/b77f063e-0f66-44e3-b924-045b72be0d7a">  | 
+| ------------- | ------------- | -------------| ------------- |
+<video autoplay src="https://github.com/user-attachments/assets/0ebd8ae3-d57b-4125-a306-e8c09226d33d">  |<video autoplay src="https://github.com/user-attachments/assets/0c47d438-7a13-4604-ae74-c07516dc1d10"> | <video autoplay src="https://github.com/user-attachments/assets/ab597528-7db2-4464-b8df-e758c8430fa6"> | <video autoplay src="https://github.com/user-attachments/assets/1b2f5b54-a759-4175-8159-db65e5a26022"> |-->
 
-| SDF-Pack (Avg 1.86 s/object) | PPN-Pack (Avg 0.43 s/object) | | SDF-Pack (Avg 1.86 s/object) | PPN-Pack (Avg 0.43 s/object) |
+Our method works together with a packing heuristic (SDF-Minimization in our implementation), and can more quickly locate the compact packing placements while achieving compact packing results similar to the upper-bound.
+
+<h4 align = "center"> Visual Comparison of SDF-Minimization and PPN-Pack in Packing 25 Objects</center></h4>
+
+| SDF-Minimization <br> (Avg 1.86 s/object) | PPN-Pack <br>(Avg 0.43 s/object) | | SDF-Minimization <br>(Avg 1.86 s/object) | PPN-Pack <br>(Avg 0.43 s/object) |
 | ------------- | ------------- | -------------| ------------- | ------------- |
 | <video autoplay src="https://github.com/user-attachments/assets/1637ebd4-4f5f-4607-a012-ed1685de162d" > | <video autoplay src="https://github.com/user-attachments/assets/2a22486b-ae6a-4c9a-82c9-90081355fa3f">| | <video autoplay src="https://github.com/user-attachments/assets/04b405bd-f909-4cca-af12-a89877be29b8"> | <video autoplay src="https://github.com/user-attachments/assets/ca088e2e-b42d-4fcd-8c7b-76e180d16eeb">|
 
@@ -49,9 +52,24 @@ Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experimen
 The subfolder `./dataset/our_oriented_dataset/` contains the simplified object meshes processed to be watertight. These meshes are further processed through V-HACD convex decomposition for collision simulation, and the processed collision models are presented in the folder `./dataset/our_oriented_decomp/`. We also provide the voxelization results of the objects in `./dataset/our_oriented_occs/`. 
 
 ### Download the Training Dataset
-To construct the training ground-truth, we run the [SDF-Pack](https://github.com/kwpoon/SDF-Pack) on 1000 packing sequences (object IDs in `1000_packing_sequences_of_80_objects.npy`) to form the ground-truth of our placement proposal network training.
+To construct the training ground truth, we run the SDF-Minimization Heuristic on 1000 packing sequences (object IDs in `1000_packing_sequences_of_80_objects.npy`) to form the ground truth of our placement proposal network training.
 
-The ground truth for each 
+The ground truth for each packing sequence has a format below
+
+```
+|-- 1000_packing_sequences_of_80_objects.npy
+|-- dataset  
+|   |-- our_oriented_dataset
+|   |   |-- 00000003_072-c_toy_airplane-processed.ply
+|   |   |...
+|   |-- our_oriented_decomp
+|   |   |-- 00000003_072-c_toy_airplane-processed.obj
+|   |   |...
+|   |-- our_oriented_occs
+|   |   |-- 00002777_cheezit_big_original-processed_objocc.npy
+|   |   |-- 00002777_cheezit_big_original-processed_depth.npy
+|   |   |...
+```
 
 ### Installation
 

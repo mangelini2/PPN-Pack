@@ -54,7 +54,7 @@ Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experimen
 |   |-- our_oriented_occs
 |   |   |-- 00002777_cheezit_big_original-processed_objocc.npy
 |   |   |-- 00002777_cheezit_big_original-processed_depth.npy
-|   |   |...
+|   |...
 ```
 The subfolder `./dataset/our_oriented_dataset/` contains the simplified object meshes processed to be watertight. These meshes are further processed through V-HACD convex decomposition for collision simulation, and the processed collision models are presented in the folder `./dataset/our_oriented_decomp/`. We also provide the voxelization results of the objects in `./dataset/our_oriented_occs/`. 
 

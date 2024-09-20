@@ -40,7 +40,7 @@ Our method works together with a packing heuristic (SDF-Minimization in our impl
   ```
 
 ### Download the Object Models
-Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 1000 packing sequences of 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive1](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on novel sequences formed by randomly drawn objects.
+Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the processed dataset from [Google Drive1](https://drive.google.com/file/d/1i2iPqhWSmGWMJC3wa9Y_fVD3HyuklFAO/view?usp=sharing) and extract the files in the folder `./dataset/`. The object IDs forming the packing sequences can be found at `1000_packing_sequences_of_80_objects.npy`, which is then used to form the training data. Note that the evaluation is performed on 2000 novel sequences formed by randomly drawn objects.
 
 ```
 |-- 1000_packing_sequences_of_80_objects.npy

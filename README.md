@@ -37,7 +37,7 @@ Our key idea is to learn to predict good placement locations for compact object 
 * **Download the Object Models**
 
 Following [SDF-Pack](https://github.com/kwpoon/SDF-Pack), we performed experiments on 96 types of objects collected from the YCB dataset and the Rutgers APC RGB-D dataset. Please download the [object models](https://drive.google.com/file/d/18x_Gtq_xMEGpZx-Nh-5N5obEjguBkbp3/view?usp=sharing) and extract to form `./autostore`. 
-% Also, download the pre-extracted [object heightmaps](https://drive.google.com/file/d/1QU7-RJbG0uTyDw4cyklMRc-tdXqCUTkL/view?usp=sharing) and extract to form './train_data_ppn_96_dataset'.
+[comment]: <> Also, download the pre-extracted [object heightmaps](https://drive.google.com/file/d/1QU7-RJbG0uTyDw4cyklMRc-tdXqCUTkL/view?usp=sharing) and extract to form './train_data_ppn_96_dataset'.
 
 The evaluation is performed on [2000 novel sequences](sequential_testing_shape_codes_96_type_2000_80_num_rand.npy).
 

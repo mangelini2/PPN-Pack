@@ -1,4 +1,4 @@
-name: sdf_pack
+name: ppn_pack
 channels:
   - pytorch
   - defaults
@@ -133,4 +133,4 @@ dependencies:
       - werkzeug==2.2.2
       - wrapt==1.14.1
       - zipp==3.12.0
-prefix: /data3/jhpan21/miniconda3/envs/ravens
+prefix: /data3/jhpan21/miniconda3/envs/ppn_pack

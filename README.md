@@ -63,6 +63,13 @@ In addition, if you want to disable our PPN-Net and test the computation speed o
 python demos_network.py --disp=True --accelerate=plain
 ```
 
+### Todo List
+
+- [x] Object CAD models
+- [x] Physical Simulator
+- [x] Model checkpoints
+- [ ] Training codes
+
 
 ### Citation
 
